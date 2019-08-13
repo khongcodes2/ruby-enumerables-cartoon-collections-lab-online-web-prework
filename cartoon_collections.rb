@@ -1,3 +1,5 @@
+require 'pry'
+
 def roll_call_dwarves(dwarves_array)
   dwarves_array.each_with_index {|item,index| puts "#{index+1} #{item}"}
 end
@@ -13,6 +15,16 @@ end
 def find_the_cheese(cheese_test)
   #test if has any of the cheese, output ar
   # .find method didn't work w 3 arguments
+ # binding.pry
+  
+  cheeses=["cheddar","gouda","camembert"]
+  found_items=cheese_test.select do |item|
+    cheeses.include?(item)
+  end
+  
+  return found_items[0]
+  
+  #binding.pry
   
   holder=[]
   if cheese_test.include?("cheddar")
